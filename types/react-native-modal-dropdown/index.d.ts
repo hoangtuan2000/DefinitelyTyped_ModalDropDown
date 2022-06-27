@@ -18,7 +18,7 @@ export interface PositionStyle {
 export interface ModalDropdownProps<T = any> extends ViewProps {
     disabled?: boolean | undefined;
     defaultIndex?: number | undefined;
-    defaultValue?: string | undefined;
+    defaultValue?: any | undefined;
     options?: T[] | undefined;
     animated?: boolean | undefined;
     scrollEnabled?: boolean | undefined;
@@ -30,7 +30,7 @@ export interface ModalDropdownProps<T = any> extends ViewProps {
     adjustFrame?: ((positionStyle: PositionStyle) => PositionStyle) | undefined;
     renderRow?: ((option: T, index: string, isSelected: boolean) => React.ReactNode) | undefined;
     renderSeparator?: ((sectionID: string, index: string, adjacentRowHighlighted: boolean) => React.ReactNode) | undefined;
-    renderButtonText?: ((text: string) => string) | undefined;
+    renderButtonText?: (() => any) | undefined;
     onDropdownWillShow?: (() => void | boolean) | undefined;
     onDropdownWillHide?: (() => void | boolean) | undefined;
     onSelect?: ((index: string, option: T) => void | boolean) | undefined;
